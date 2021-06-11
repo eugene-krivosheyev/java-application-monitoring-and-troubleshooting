@@ -500,6 +500,8 @@ jmeter -n -t load.jmx -j log/jmeter/jmeter.log -l log/jmeter/jmeter.jtl -e -o lo
 ### When
 - [ ] CLI tools used at {{ prod }}
 ```shell script
+dnf install net-tools sysstat
+
 uname --all
 cat /etc/os-release
 uptime
