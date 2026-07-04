@@ -315,7 +315,7 @@ component "<$server>\nhardware" as hardware #lightgray {
                             [user-defined thread pools\nmanagement]
                             [logging\nmanagement]
 
-                            component "jpa persistent provider" #white {
+                            component "jpa persistent provider" as jpa #white {
                                 [db data caching\nmanagement]
                                 component "jdbc connection pool" as app_cp {
                                     [jdbc driver]
@@ -345,9 +345,10 @@ component "<$server>\nhardware" as hardware #lightgray {
                                         [view]
                                     }
 
-                                    service -> repository 
-                                    controller -> service
                                     view -> controller
+                                    controller -> service
+                                    service -> repository
+                                    repository ->  
                                 }
                             }
                         }
